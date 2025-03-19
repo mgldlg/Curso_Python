@@ -120,7 +120,7 @@ def menu():
             input("\nPulsa Enter para volver al menú...")    # Intro para volver al inicio.
         
         elif opcion == "6":    # Salir del programa.
-            print("¡Hasta luego!")
+            print("Gracias y hasta la próxima.")
             break
         else:
             print("Opción inválida, por favor ingresa una opción válida.")
