@@ -24,7 +24,7 @@ class Libro:
             self.disponible = True
             return f"El libro {self.titulo} (ISBN: {self.isbn}) se ha devuelto con éxito."
         else:
-            return f"El libro {self.titulo} (ISBN: {self.isbn}) ya está disponible."
+            return f"Lo sentimos, el libro {self.titulo} (ISBN: {self.isbn}) no ha sido prestado. Introduzca otro ISBN."
 
     # Incluye un método mostrar() que devuelva una lista con todos los libros de la biblioteca y los muestre en pantalla con todos sus datos y diga si estás disponible o no.
     def mostrar(self):
@@ -92,13 +92,13 @@ def menu():
         elif opcion == "4":    # Mostrar todos los libros y mostrar en columnas.
             if libros:    # Verifica si la lista de libros no está vacía.
                 print("\nLista de libros en la biblioteca:")
-                print(f"{'Título':<30} {'Autor':<30} {'ISBN':<15} {'Disponibilidad':<15}")    # Imprime los encabezados.
-                print("-" * 90)    # Línea separadora.
+                print(f"{'Título':<40} {'Autor':<40} {'ISBN':<15} {'Disponibilidad':<15}")    # Imprime los encabezados.
+                print("-" * 112)    # Línea separadora.
 
                 #    Imprime los libros.
                 for libro in libros:
                     disponibilidad = "Disponible" if libro.disponible else "No disponible"
-                    print(f"{libro.titulo:<30} {libro.autor:<30} {libro.isbn:<15} {disponibilidad:<15}")
+                    print(f"{libro.titulo:<40} {libro.autor:<40} {libro.isbn:<15} {disponibilidad:<15}")
             else:
                 print("No hay libros en la biblioteca.")
 
@@ -108,12 +108,12 @@ def menu():
             isbn_buscar = input("Por favor, ingresa el ISBN del libro a buscar: ")
             libro_encontrado = next((libro for libro in libros if libro.isbn == isbn_buscar), None)
             if libro_encontrado:
-                print(f"{'Título':<30} {'Autor':<30} {'ISBN':<15} {'Disponibilidad':<15}")    # Imprimir los encabezados.
-                print("-" * 90)    # Línea separadora.
+                print(f"{'Título':<40} {'Autor':<40} {'ISBN':<15} {'Disponibilidad':<15}")    # Imprimir los encabezados.
+                print("-" * 112)    # Línea separadora.
 
                 # Mostrar el libro encontrado
                 disponibilidad = "Disponible" if libro_encontrado.disponible else "No disponible"
-                print(f"{libro_encontrado.titulo:<30} {libro_encontrado.autor:<30} {libro_encontrado.isbn:<15} {disponibilidad:<15}")
+                print(f"{libro_encontrado.titulo:<40} {libro_encontrado.autor:<40} {libro_encontrado.isbn:<15} {disponibilidad:<15}")
             else:
                 print("Lo sentimos, el libro con ese ISBN no existe.")
 
