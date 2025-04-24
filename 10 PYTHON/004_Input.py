@@ -8,6 +8,6 @@ print("Bienvenido", s_nombreIntroducido)
 por lo que, si necesitamos operar matemáticamente con números, tendremos que hacer un casting: 
 """
 
-s_edad = int(input("Introduzca su edad: "))
+n_edad = int(input("Introduzca su edad: "))
 
-print("El año que viene tendrá usted ", s_edad + 1, "años")
+print("El año que viene tendrá usted", n_edad + 1, "años")
